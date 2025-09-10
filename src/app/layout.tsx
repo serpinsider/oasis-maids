@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import StructuredData from "@/components/StructuredData";
 
@@ -111,15 +112,16 @@ export default function RootLayout({
         {/* Android/Chrome */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-        {/* Fathom - beautiful, simple website analytics */}
-        <script src="https://cdn.usefathom.com/script.js" data-site="ELAPZTGP" defer></script>
-        {/* / Fathom */}
-
       </head>
       <body
         className={`${inter.variable} ${merriweather.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <Script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="ELAPZTGP"
+          strategy="afterInteractive"
+        />
         <StructuredData type="local-business" />
         <StructuredData type="organization" />
         <StructuredData type="website" />
